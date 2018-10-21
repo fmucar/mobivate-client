@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="xaresponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="entitylist">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="userroutepricing">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="cost">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="amount"/>
+                          <xs:element type="xs:string" name="currency"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:byte" name="countryCode"/>
+                    <xs:element type="xs:string" name="countryId"/>
+                    <xs:element type="xs:string" name="countryName"/>
+                    <xs:element type="xs:string" name="description"/>
+                    <xs:element type="xs:string" name="id"/>
+                    <xs:element name="price">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:float" name="amount"/>
+                          <xs:element type="xs:string" name="currency"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="userId"/>
+                    <xs:element type="xs:string" name="userRouteId"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="offset"/>
+            <xs:attribute type="xs:byte" name="total"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

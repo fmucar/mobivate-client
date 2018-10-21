@@ -1,0 +1,57 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="xaresponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="authentication">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="code"/>
+              <xs:element type="xs:string" name="text"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="entitylist">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="deliverymessage" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="created"/>
+                    <xs:element type="xs:string" name="creatingUserId"/>
+                    <xs:element type="xs:string" name="id"/>
+                    <xs:element type="xs:string" name="modified" minOccurs="0"/>
+                    <xs:element type="xs:string" name="ownerUserId"/>
+                    <xs:element type="xs:byte" name="version"/>
+                    <xs:element type="xs:string" name="body"/>
+                    <xs:element type="xs:string" name="connectionId" minOccurs="0"/>
+                    <xs:element name="cost">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:float" name="amount"/>
+                          <xs:element type="xs:string" name="currency"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="deliveryMethod"/>
+                    <xs:element type="xs:string" name="direction"/>
+                    <xs:element type="xs:long" name="gatewayReference" minOccurs="0"/>
+                    <xs:element type="xs:string" name="logicalMessageId"/>
+                    <xs:element type="xs:string" name="logicalRecipientId"/>
+                    <xs:element type="xs:long" name="originator"/>
+                    <xs:element type="xs:byte" name="parts"/>
+                    <xs:element type="xs:long" name="recipient"/>
+                    <xs:element type="xs:string" name="routeId"/>
+                    <xs:element type="xs:string" name="simulated"/>
+                    <xs:element type="xs:string" name="status"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="offset"/>
+            <xs:attribute type="xs:byte" name="total"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
